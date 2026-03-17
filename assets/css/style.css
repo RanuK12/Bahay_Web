@@ -1057,6 +1057,196 @@ h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
   content: '←';
 }
 
+/* ===== PROJECT DETAIL — CREATIVE GALLERY ===== */
+
+/* Full-width cover hero */
+.project-cover {
+  width: 100%;
+  height: 55vh;
+  min-height: 320px;
+  overflow: hidden;
+  position: relative;
+}
+
+.project-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.project-cover-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(58, 58, 58, 0.5) 0%, transparent 60%);
+}
+
+.project-cover-title {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  right: 2rem;
+  color: white;
+}
+
+.project-cover-title h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.project-cover-title .proj-type {
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin-top: 0.5rem;
+  font-family: var(--font-body);
+}
+
+/* Intro strip */
+.project-intro {
+  padding: 3rem 0 2rem;
+  max-width: 680px;
+}
+
+.project-intro p {
+  color: var(--taupe);
+  font-size: 1rem;
+  line-height: 1.8;
+  font-family: var(--font-accent);
+  font-style: italic;
+}
+
+/* Section block */
+.project-section {
+  padding: 3.5rem 0;
+  border-top: 1px solid rgba(174, 161, 146, 0.2);
+}
+
+.project-section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.project-section-tag::before {
+  content: '';
+  width: 30px;
+  height: 1.5px;
+  background: var(--terracotta);
+}
+
+.project-section h2 {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  color: var(--teal-dark);
+  margin-bottom: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+/* Render grid — mixed sizes */
+.gallery-renders {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+}
+
+.gallery-renders img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: transform 0.35s ease, opacity 0.3s ease;
+  display: block;
+}
+
+.gallery-renders img:hover {
+  transform: scale(1.02);
+  opacity: 0.92;
+}
+
+/* Make every 7th image span 2 cols */
+.gallery-renders img.g-wide {
+  grid-column: span 2;
+  aspect-ratio: 16/9;
+}
+
+/* First image: full-width hero in render grid */
+.gallery-renders img.g-full {
+  grid-column: 1 / -1;
+  aspect-ratio: 21/9;
+}
+
+/* Photo grid — real photos, warmer */
+.gallery-photos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+}
+
+.gallery-photos img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: transform 0.35s ease;
+  display: block;
+  filter: saturate(1.08);
+}
+
+.gallery-photos img:hover {
+  transform: scale(1.02);
+}
+
+.gallery-photos img.g-wide {
+  grid-column: span 2;
+  aspect-ratio: 16/9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .project-cover { height: 45vh; }
+
+  .gallery-renders,
+  .gallery-photos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-renders img.g-full {
+    aspect-ratio: 16/9;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-cover-title h1 { font-size: 1.8rem; }
+
+  .gallery-renders,
+  .gallery-photos {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-renders img.g-wide,
+  .gallery-renders img.g-full,
+  .gallery-photos img.g-wide {
+    grid-column: 1;
+    aspect-ratio: 4/3;
+  }
+}
+
 /* ===== RAH SERVICE IMAGE ===== */
 .service-rah-image {
   max-width: 700px;
