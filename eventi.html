@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bahay Design — Architettura e Interior Design</title>
-  <meta name="description" content="Bahay Design — Studio di Architettura e Interior Design di Cristina Cocco. Trasformiamo gli spazi della tua casa raccontando la tua storia.">
+  <title>Eventi — Bahay Design</title>
+  <meta name="description" content="Gli ultimi eventi, collaborazioni e novità di Bahay Design.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Marmelad&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -12,7 +12,6 @@
   <link rel="icon" href="assets/images/logo.svg" type="image/svg+xml">
 </head>
 <body>
-  <!-- Header -->
   <header class="header">
     <nav class="nav">
       <a href="index.html" class="nav-logo">
@@ -21,38 +20,39 @@
         </div>
       </a>
       <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="about.html">Cos'è Bahay</a></li>
         <li><a href="servizi.html">Servizi</a></li>
         <li><a href="progetti.html">Progetti</a></li>
-        <li><a href="eventi.html">Eventi</a></li>
+        <li><a href="eventi.html" class="active">Eventi</a></li>
         <li><a href="contatti.html">Contatti</a></li>
       </ul>
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+      <div class="hamburger"><span></span><span></span><span></span></div>
     </nav>
   </header>
 
-  <!-- Hero -->
-  <main class="hero">
-    <div class="hero-logo">
-      <img src="assets/images/logo.svg" alt="Bahay Design Logo">
-    </div>
-    <div class="hero-text">
-      <p class="hero-tagline">Architettura d'interni e progettazione del colore con RAH</p>
+  <main class="page-content projects" style="padding-top: 6rem;">
+    <div class="container">
+      <h2 class="section-title">Eventi</h2>
+      <p style="text-align: center; color: var(--taupe); font-size: 1rem; margin-bottom: 3rem; font-family: var(--font-accent); font-style: italic;">Qui troverai gli ultimi eventi, collaborazioni e novità di Bahay Design.</p>
+
+      <div class="projects-grid" style="max-width: 400px; margin: 0 auto;">
+        <!-- Placeholder event card -->
+        <div class="project-item fade-in">
+          <div class="project-card" style="background: var(--cream); display: flex; align-items: center; justify-content: center;">
+            <span style="color: var(--taupe); font-family: var(--font-accent); font-style: italic; font-size: 1.1rem; text-align: center; padding: 2rem;">Prossimamente...</span>
+          </div>
+          <p class="project-caption">In arrivo</p>
+        </div>
+      </div>
     </div>
   </main>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <p>&copy; 2026 Bahay Design — Cristina Cocco, Architetto. P.IVA 04315700247 — Vicenza, Italia</p>
     </div>
   </footer>
-
   <script src="assets/js/main.js"></script>
 </body>
 </html>
