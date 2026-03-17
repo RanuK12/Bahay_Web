@@ -616,6 +616,161 @@ h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
   font-weight: 600;
 }
 
+/* ---- CSS Placeholder Project Covers ---- */
+.proj-ph {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+/* Casa EA — Consulenza Colore RAH: conic palette wheel */
+.proj-ph--ea {
+  background: linear-gradient(160deg, #fdf0e9 0%, #f2d8c8 55%, #E3A088 100%);
+}
+.proj-ph--ea::before {
+  content: '';
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #E3A088 0deg 72deg,
+    #9FC8CA 72deg 144deg,
+    #c4b49b 144deg 216deg,
+    #fef7f2 216deg 288deg,
+    #6a8a8b 288deg 360deg
+  );
+  box-shadow: 0 4px 20px rgba(100,80,70,0.18);
+}
+.proj-ph--ea::after {
+  content: '';
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #fdf0e9;
+}
+
+/* Casa LM — Progettazione d'Interni: pianta architectural grid */
+.proj-ph--lm {
+  background: #fdf5ee;
+  background-image:
+    linear-gradient(rgba(180,160,140,0.25) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(180,160,140,0.25) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+.proj-ph--lm::before {
+  content: '';
+  position: absolute;
+  bottom: 18%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 62%;
+  height: 40%;
+  background: rgba(227,160,136,0.28);
+  border-radius: 200px 200px 0 0;
+  border: 2px solid rgba(227,160,136,0.5);
+}
+.proj-ph--lm::after {
+  content: '';
+  position: absolute;
+  bottom: 18%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 40%;
+  background: rgba(227,160,136,0.5);
+}
+
+/* Casa MK — In Cantiere: geometric diamond on teal */
+.proj-ph--mk {
+  background: linear-gradient(150deg, #3a6566 0%, #5a8e8f 55%, #9FC8CA 100%);
+}
+.proj-ph--mk::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 88px;
+  height: 88px;
+  border: 3px solid rgba(255,255,255,0.45);
+}
+.proj-ph--mk::after {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%) rotate(22.5deg);
+  width: 62px;
+  height: 62px;
+  border: 2px solid rgba(255,255,255,0.25);
+}
+
+/* Cucina ME — Warm terracotta with horizontal kitchen lines */
+.proj-ph--cucina {
+  background: linear-gradient(170deg, #c97d62 0%, #E3A088 50%, #f5c8b4 100%);
+}
+.proj-ph--cucina::before {
+  content: '';
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  border: 2px solid rgba(255,255,255,0.4);
+}
+.proj-ph--cucina::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  right: 15%;
+  height: 2px;
+  background: rgba(255,255,255,0.35);
+  box-shadow:
+    0 -18px 0 rgba(255,255,255,0.35),
+    0 18px 0 rgba(255,255,255,0.35),
+    0 36px 0 rgba(255,255,255,0.2);
+}
+
+/* Stanza AB — Re-Styling meditazione: radial aqua with serenity arc */
+.proj-ph--stanza {
+  background: radial-gradient(ellipse at 50% 42%, #d8ecee 0%, #9FC8CA 65%, #6a9fa0 100%);
+}
+.proj-ph--stanza::before {
+  content: '';
+  position: absolute;
+  top: 14%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92px;
+  height: 116px;
+  border-radius: 46px 46px 0 0;
+  border: 2px solid rgba(255,255,255,0.55);
+  background: rgba(255,255,255,0.08);
+}
+.proj-ph--stanza::after {
+  content: '';
+  position: absolute;
+  top: 28%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 56px;
+  background: rgba(255,255,255,0.5);
+  box-shadow: -22px 8px 0 rgba(255,255,255,0.3), 22px 8px 0 rgba(255,255,255,0.3);
+}
+
 /* Project detail */
 .project-detail {
   padding: 8rem 0 4rem;
