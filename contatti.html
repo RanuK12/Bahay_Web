@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contatti — Bahay Design</title>
+  <meta name="description" content="Contatta Bahay Design per una consulenza di architettura e interior design.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Marmelad&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="assets/images/logo.svg" type="image/svg+xml">
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <a href="index.html" class="nav-logo"><img src="assets/images/logo.svg" alt="Bahay Design"></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">Cos'è Bahay</a></li>
+        <li><a href="servizi.html">Servizi</a></li>
+        <li><a href="progetti.html">Progetti</a></li>
+        <li><a href="payo.html">Payo</a></li>
+        <li><a href="contatti.html" class="active">Contatti</a></li>
+      </ul>
+      <div class="hamburger"><span></span><span></span><span></span></div>
+    </nav>
+  </header>
+
+  <main class="page-content contact" style="padding-top: 6rem;">
+    <div class="container">
+      <h2 class="section-title">Contatti</h2>
+
+      <div class="contact-content">
+        <!-- Social -->
+        <div class="contact-social fade-in">
+          <h3>Seguici su</h3>
+          <div class="social-links">
+            <a href="https://www.instagram.com/bahay.design/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+              Instagram
+            </a>
+            <a href="#" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3V2z"/></svg>
+              Facebook
+            </a>
+            <a href="#" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.43z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+              YouTube
+            </a>
+          </div>
+        </div>
+
+        <!-- Address -->
+        <div class="contact-info fade-in">
+          <h3>Siamo qui</h3>
+          <p>Vicenza, Italia</p>
+        </div>
+
+        <!-- Email -->
+        <div class="contact-info fade-in">
+          <h3>Scrivici a</h3>
+          <p><a href="mailto:info@bahaydesign.it">info@bahaydesign.it</a></p>
+          <p><a href="mailto:cristina.cocco@bahaydesign.it">cristina.cocco@bahaydesign.it</a></p>
+        </div>
+
+        <!-- Linktree -->
+        <div class="contact-info fade-in" style="margin-top: 2rem;">
+          <h3>Link utili</h3>
+          <p><a href="https://linktr.ee/bahay.design" target="_blank" rel="noopener">linktr.ee/bahay.design</a></p>
+          <p><a href="https://www.rahcolours.com/it/ambassadors/cristina-cocco" target="_blank" rel="noopener">RAH Colours — Cristina Cocco</a></p>
+        </div>
+
+        <!-- Contact form -->
+        <div class="service-cta fade-in" style="margin-top: 3rem;">
+          <h3>Contattaci</h3>
+          <p>Hai un progetto in mente? Scrivici e ti risponderemo al più presto.</p>
+          <form class="contact-form" action="mailto:info@bahaydesign.it" method="POST" enctype="text/plain">
+            <input type="text" name="nome" placeholder="Nome e Cognome" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="tel" name="telefono" placeholder="Numero Telefono">
+            <textarea name="messaggio" placeholder="Il tuo messaggio..."></textarea>
+            <button type="submit" class="btn">Invia Messaggio</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Bahay Design — Cristina Cocco, Architetto. P.IVA — Vicenza, Italia</p>
+    </div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
