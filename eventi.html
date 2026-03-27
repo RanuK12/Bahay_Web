@@ -3,19 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <title>Eventi — Bahay Design</title>
   <meta name="description" content="Gli ultimi eventi, collaborazioni e novità di Bahay Design.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Marmelad&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=20260327b">
+  <link rel="stylesheet" href="assets/css/style.css?v=20260328g">
   <link rel="icon" href="assets/images/branding/logo.svg" type="image/svg+xml">
 </head>
 <body>
   <header class="header">
     <nav class="nav">
       <a href="index.html" class="nav-logo">
-        <img src="assets/images/branding/logo-white.png" alt="Bahay Design">
+        <img src="assets/images/branding/logo.svg" alt="Bahay Design">
+        <span class="nav-logo-text">Architettura d'interni e progettazione del colore</span>
       </a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
@@ -34,40 +38,61 @@
       <h2 class="section-title">Eventi</h2>
       <p style="text-align: center; color: var(--taupe); font-size: 1rem; margin-bottom: 3rem; font-family: var(--font-accent); font-style: italic;">Qui troverai gli ultimi eventi, collaborazioni e novità di Bahay Design.</p>
 
-      <div class="projects-grid">
-        <div class="project-item fade-in">
-          <div class="project-card">
-            <img src="assets/images/events/festa-fiori-arreda.png" alt="Consulenze alla Festa dei fiori con Arreda&Risparmia" data-lightbox>
+      <div class="events-grid">
+        <!-- Featured: Open Day -->
+        <div class="event-card event-featured fade-in">
+          <img src="assets/images/events/open-day-rah.jpg" alt="Open day consulenze RAH con Vicenza Vernici" data-lightbox>
+          <div class="event-card-overlay">
+            <span class="event-card-badge">In evidenza</span>
+            <div class="event-card-content">
+              <h3>Open Day Consulenze RAH con Vicenza Vernici</h3>
+              <p>Evento di consulenze cromatiche aperto al pubblico</p>
+            </div>
           </div>
-          <p class="project-caption">Consulenze alla Festa dei fiori con Arreda&amp;Risparmia</p>
         </div>
 
-        <div class="project-item fade-in">
-          <div class="project-card">
-            <img src="assets/images/events/rah-vicenza-vernici.png" alt="Consulenze colore RAH gratuite con Vicenza Vernici" data-lightbox>
+        <div class="event-card fade-in">
+          <img src="assets/images/events/festa-fiori-arreda.png" alt="Consulenze alla Festa dei fiori con Arreda&Risparmia" data-lightbox>
+          <div class="event-card-overlay">
+            <span class="event-card-badge">Collaborazione</span>
+            <div class="event-card-content">
+              <h3>Consulenze alla Festa dei Fiori</h3>
+              <p>Con Arreda&amp;Risparmia</p>
+            </div>
           </div>
-          <p class="project-caption">Consulenze colore RAH gratuite con Vicenza Vernici</p>
         </div>
 
-        <div class="project-item fade-in">
-          <div class="project-card">
-            <img src="assets/images/events/open-day-rah.jpg" alt="Open day consulenze RAH con Vicenza Vernici" data-lightbox>
+        <div class="event-card fade-in">
+          <img src="assets/images/events/rah-vicenza-vernici.png" alt="Consulenze colore RAH gratuite con Vicenza Vernici" data-lightbox>
+          <div class="event-card-overlay">
+            <span class="event-card-badge">Consulenza</span>
+            <div class="event-card-content">
+              <h3>Consulenze Colore RAH Gratuite</h3>
+              <p>Con Vicenza Vernici</p>
+            </div>
           </div>
-          <p class="project-caption">Open day consulenze RAH con Vicenza Vernici</p>
         </div>
 
-        <div class="project-item fade-in">
-          <div class="project-card">
-            <img src="assets/images/events/presentazione-colore-persona.png" alt="Presentazione Il colore e la persona con Vicenza Vernici" data-lightbox>
+        <div class="event-card fade-in">
+          <img src="assets/images/events/presentazione-colore-persona.png" alt="Presentazione Il colore e la persona con Vicenza Vernici" data-lightbox>
+          <div class="event-card-overlay">
+            <span class="event-card-badge">Presentazione</span>
+            <div class="event-card-content">
+              <h3>Il Colore e la Persona</h3>
+              <p>Con Vicenza Vernici</p>
+            </div>
           </div>
-          <p class="project-caption">Presentazione "Il colore e la persona" con Vicenza Vernici</p>
         </div>
 
-        <div class="project-item fade-in">
-          <div class="project-card">
-            <img src="assets/images/events/webinar-colore-architetti.png" alt="Webinar sul colore con l'Ordine degli Architetti" data-lightbox>
+        <div class="event-card fade-in">
+          <img src="assets/images/events/webinar-colore-architetti.png" alt="Webinar sul colore con l'Ordine degli Architetti" data-lightbox>
+          <div class="event-card-overlay">
+            <span class="event-card-badge">Webinar</span>
+            <div class="event-card-content">
+              <h3>Webinar sul Colore</h3>
+              <p>Con l'Ordine degli Architetti</p>
+            </div>
           </div>
-          <p class="project-caption">Webinar sul colore con l'Ordine degli Architetti</p>
         </div>
       </div>
     </div>
@@ -76,6 +101,8 @@
   <!-- Lightbox -->
   <div class="lightbox" id="lightbox">
     <button class="lightbox-close" id="lightbox-close">&times;</button>
+    <button class="lightbox-prev">&#8249;</button>
+    <button class="lightbox-next">&#8250;</button>
     <img src="" alt="" id="lightbox-img">
   </div>
 
@@ -84,6 +111,6 @@
       <p>&copy; 2026 Bahay Design — Cristina Cocco, Architetto. P.IVA 04315700247 — Vicenza, Italia</p>
     </div>
   </footer>
-  <script src="assets/js/main.js?v=20260327b"></script>
+  <script src="assets/js/main.js?v=20260328g"></script>
 </body>
 </html>
