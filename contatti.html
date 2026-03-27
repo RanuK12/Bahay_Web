@@ -87,7 +87,11 @@
         <div class="service-cta fade-in" style="margin-top: 3rem;">
           <h3>Contattaci</h3>
           <p>Hai un progetto in mente? Scrivici e ti risponderemo al più presto.</p>
-          <form class="contact-form" action="mailto:info@bahaydesign.it" method="POST" enctype="text/plain">
+          <form class="contact-form" action="https://formsubmit.co/info@bahaydesign.it" method="POST">
+            <input type="hidden" name="_subject" value="Nuovo messaggio da Bahay Design">
+            <input type="hidden" name="_next" value="https://bahaydesign.it/contatti.html">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="text" name="_honey" style="display:none">
             <input type="text" name="nome" placeholder="Nome e Cognome" required>
             <input type="email" name="email" placeholder="Email" required>
             <input type="tel" name="telefono" placeholder="Numero Telefono">
