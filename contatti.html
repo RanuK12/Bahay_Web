@@ -3,19 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <title>Contatti — Bahay Design</title>
   <meta name="description" content="Contatta Bahay Design per una consulenza di architettura e interior design.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Marmelad&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=20260327b">
+  <link rel="stylesheet" href="assets/css/style.css?v=20260328g">
   <link rel="icon" href="assets/images/branding/logo.svg" type="image/svg+xml">
 </head>
 <body>
   <header class="header">
     <nav class="nav">
       <a href="index.html" class="nav-logo">
-        <img src="assets/images/branding/logo-white.png" alt="Bahay Design">
+        <img src="assets/images/branding/logo.svg" alt="Bahay Design">
+        <span class="nav-logo-text">Architettura d'interni e progettazione del colore</span>
       </a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
@@ -34,57 +38,63 @@
       <h2 class="section-title">Contatti</h2>
 
       <div class="contact-content">
-        <!-- Social -->
-        <div class="contact-social fade-in">
-          <h3>Seguici su</h3>
-          <div class="social-links">
-            <a href="https://www.instagram.com/bahay.design/" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
-              Instagram
-            </a>
-            <a href="https://www.facebook.com/bahay.design" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3V2z"/></svg>
-              Facebook
-            </a>
-            <a href="https://www.houzz.it/hznb/professionisti/bahay-design-pfvwit-pf~1171070141" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-              Houzz
-            </a>
+        <!-- 3-column card layout -->
+        <div class="contact-cards">
+          <!-- Card 1: Scrivici + Link utili -->
+          <div class="contact-card fade-in">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <h3>Scrivici</h3>
+            <p><a href="mailto:info@bahaydesign.it">info@bahaydesign.it</a></p>
+            <p style="margin-top: 0.3rem;">Vicenza, Italia</p>
+            <div style="margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid rgba(174,161,146,0.15); width: 100%;">
+              <p style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--teal-light); font-weight: 700; margin-bottom: 0.6rem;">Link utili</p>
+              <p><a href="https://linktr.ee/bahay.design" target="_blank" rel="noopener">linktr.ee/bahay.design</a></p>
+              <p><a href="https://www.rahcolours.com/it/ambassadors/cristina-cocco" target="_blank" rel="noopener">RAH Colours — Cristina Cocco</a></p>
+              <p><a href="https://www.houzz.it/hznb/professionisti/bahay-design-pfvwit-pf~1171070141" target="_blank" rel="noopener">Bahay Design su Houzz</a></p>
+            </div>
           </div>
-        </div>
 
-        <!-- Address -->
-        <div class="contact-info fade-in">
-          <h3>Siamo qui</h3>
-          <p>Vicenza, Italia</p>
-        </div>
+          <!-- Card 2: Seguici -->
+          <div class="contact-card fade-in">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+            </div>
+            <h3>Seguici su</h3>
+            <div class="social-links">
+              <a href="https://www.instagram.com/bahay.design/" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+                Instagram
+              </a>
+              <a href="https://www.facebook.com/bahay.design" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3V2z"/></svg>
+                Facebook
+              </a>
+              <a href="https://www.houzz.it/hznb/professionisti/bahay-design-pfvwit-pf~1171070141" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                Houzz
+              </a>
+            </div>
+          </div>
 
-        <!-- Email -->
-        <div class="contact-info fade-in">
-          <h3>Scrivici a</h3>
-          <p><a href="mailto:info@bahaydesign.it">info@bahaydesign.it</a></p>
-        </div>
-
-        <!-- Link utili -->
-        <div class="contact-info fade-in" style="margin-top: 2rem;">
-          <h3>Link utili</h3>
-          <p><a href="https://linktr.ee/bahay.design" target="_blank" rel="noopener">linktr.ee/bahay.design</a></p>
-          <p><a href="https://www.rahcolours.com/it/ambassadors/cristina-cocco" target="_blank" rel="noopener">RAH Colours — Cristina Cocco</a></p>
-          <p><a href="https://www.houzz.it/hznb/professionisti/bahay-design-pfvwit-pf~1171070141" target="_blank" rel="noopener">Bahay Design su Houzz</a></p>
-        </div>
-
-        <!-- Lascia una recensione -->
-        <div class="contact-reviews fade-in">
-          <h3>Lascia una Recensione</h3>
-          <div class="review-links">
-            <a href="https://www.google.com/search?q=Architetto+Cristina+Cocco+Bahay+design+Recensioni" target="_blank" rel="noopener">Google</a>
-            <a href="https://www.houzz.it/hznb/professionisti/bahay-design-pfvwit-pf~1171070141" target="_blank" rel="noopener">Houzz</a>
-            <a href="https://www.facebook.com/bahay.design/reviews" target="_blank" rel="noopener">Facebook</a>
+          <!-- Card 3: Recensioni -->
+          <div class="contact-card fade-in">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <h3>Recensioni</h3>
+            <p style="font-size: 0.85rem; color: var(--brown); margin-bottom: 1rem; font-family: var(--font-accent); font-style: italic;">La tua opinione ci aiuta a crescere</p>
+            <div class="review-links">
+              <a href="https://www.google.com/search?q=Architetto+Cristina+Cocco+Bahay+design+Recensioni" target="_blank" rel="noopener">Google</a>
+              <a href="https://www.houzz.it/hznb/professionisti/bahay-design-pfvwit-pf~1171070141" target="_blank" rel="noopener">Houzz</a>
+              <a href="https://www.facebook.com/bahay.design/reviews" target="_blank" rel="noopener">Facebook</a>
+            </div>
           </div>
         </div>
 
         <!-- Contact form -->
-        <div class="service-cta fade-in" style="margin-top: 3rem;">
+        <div class="service-cta fade-in" style="margin-top: 0;">
           <h3>Contattaci</h3>
           <p>Hai un progetto in mente? Scrivici e ti risponderemo al più presto.</p>
           <form class="contact-form" action="https://formsubmit.co/info@bahaydesign.it" method="POST">
@@ -99,6 +109,7 @@
             <textarea name="messaggio" placeholder="Esigenze (tipo di stanza, mq, obiettivi...)"></textarea>
             <button type="submit" class="btn">Invia Messaggio</button>
           </form>
+          <div class="form-success">Messaggio inviato con successo! Ti risponderemo al più presto.</div>
         </div>
       </div>
     </div>
@@ -109,6 +120,6 @@
       <p>&copy; 2026 Bahay Design — Cristina Cocco, Architetto. P.IVA 04315700247 — Vicenza, Italia</p>
     </div>
   </footer>
-  <script src="assets/js/main.js?v=20260327b"></script>
+  <script src="assets/js/main.js?v=20260328g"></script>
 </body>
 </html>
