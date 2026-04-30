@@ -301,7 +301,7 @@ h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 .about-image {
   position: relative;
   overflow: hidden;
-  border-radius: 200px 200px 20px 20px;
+  border-radius: 50% 50% 20px 20px / 18% 18% 20px 20px;
   aspect-ratio: 3/4;
   background: var(--cream);
 }
@@ -353,9 +353,9 @@ h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 }
 
 .service-card {
-  background: var(--brown);
+  background: #f1e7e2;
   border: none;
-  border-radius: 200px 200px 20px 20px;
+  border-radius: 50% 50% 20px 20px / 18% 18% 20px 20px;
   padding: 3rem 2rem 2.5rem;
   text-align: center;
   transition: all 0.4s ease;
@@ -398,13 +398,13 @@ h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 .service-icon svg {
   width: 40px;
   height: 40px;
-  stroke: white;
+  stroke: var(--brown);
   fill: none;
   stroke-width: 1.5;
 }
 
 .service-card h3 {
-  color: var(--terracotta);
+  color: var(--teal-dark);
   margin-bottom: 1rem;
   font-size: 1.3rem;
   letter-spacing: 0.05em;
@@ -415,16 +415,15 @@ h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 }
 
 .service-card p {
-  color: white;
+  color: var(--brown);
   font-size: 0.85rem;
-  opacity: 0.9;
   line-height: 1.6;
 }
 
 .service-link {
   display: inline-block;
   margin-top: 1.5rem;
-  color: white;
+  color: var(--brown);
   font-size: 0.85rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -476,21 +475,12 @@ h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 }
 
 .service-qa-item h3 {
-  color: var(--terracotta);
+  color: var(--teal-light);
   margin-bottom: 1rem;
   font-size: 1.3rem;
   display: flex;
   align-items: center;
   gap: 0.75rem;
-}
-
-.service-qa-item h3::before {
-  content: '';
-  width: 8px;
-  height: 8px;
-  background: var(--teal-light);
-  border-radius: 50%;
-  flex-shrink: 0;
 }
 
 .service-qa-item p,
@@ -521,7 +511,7 @@ h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 .service-cta {
   margin-top: 4rem;
   padding: 3rem;
-  background: linear-gradient(135deg, rgba(227, 160, 136, 0.1), rgba(159, 200, 202, 0.1));
+  background: #f1e7e2;
   border-radius: 20px;
   text-align: center;
 }
@@ -609,7 +599,7 @@ h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 
 .project-card {
   position: relative;
-  border-radius: 200px 200px 0 0;
+  border-radius: 50% 50% 0 0 / 18% 18% 0 0;
   overflow: hidden;
   aspect-ratio: 3/4;
   cursor: pointer;
@@ -635,7 +625,7 @@ h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 .project-caption {
   text-align: center;
   margin-top: 1rem;
-  font-size: 1rem;
+  font-size: 1.15rem;
   letter-spacing: 0.1em;
   color: var(--teal-light);
   text-transform: uppercase;
@@ -704,7 +694,7 @@ h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 
 .team-card {
   position: relative;
-  border-radius: 200px 200px 0 0;
+  border-radius: 50% 50% 0 0 / 18% 18% 0 0;
   overflow: hidden;
   aspect-ratio: 3/4;
   background: var(--cream);
@@ -756,9 +746,9 @@ h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 }
 
 .contact-card {
-  background: linear-gradient(145deg, rgba(159, 200, 202, 0.08), rgba(217, 205, 189, 0.12));
+  background: #f1e7e2;
   border: 1px solid rgba(174, 161, 146, 0.15);
-  border-radius: 200px 200px 20px 20px;
+  border-radius: 50% 50% 20px 20px / 18% 18% 20px 20px;
   padding: 2.5rem 1.5rem 2rem;
   text-align: center;
   transition: all 0.4s ease;
@@ -891,7 +881,7 @@ h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 
 .event-card {
   position: relative;
-  border-radius: 200px 200px 20px 20px;
+  border-radius: 50% 50% 20px 20px / 18% 18% 20px 20px;
   overflow: hidden;
   aspect-ratio: 3/4;
   cursor: pointer;
@@ -918,7 +908,7 @@ h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 .event-card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0, 109, 119, 0.7) 0%, rgba(0, 109, 119, 0.15) 40%, transparent 70%);
+  background: transparent;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -927,7 +917,7 @@ h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 }
 
 .event-card:hover .event-card-overlay {
-  background: linear-gradient(to top, rgba(0, 109, 119, 0.8) 0%, rgba(0, 109, 119, 0.25) 50%, transparent 70%);
+  background: rgba(0, 109, 119, 0.15);
 }
 
 .event-card-badge {
@@ -980,14 +970,14 @@ h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 }
 
 .event-featured .event-card-overlay {
-  background: linear-gradient(to right, rgba(0, 109, 119, 0.75) 0%, rgba(0, 109, 119, 0.2) 50%, transparent 80%);
+  background: transparent;
   justify-content: center;
   padding: 2.5rem 3rem;
   align-items: flex-start;
 }
 
 .event-featured:hover .event-card-overlay {
-  background: linear-gradient(to right, rgba(0, 109, 119, 0.85) 0%, rgba(0, 109, 119, 0.3) 50%, transparent 80%);
+  background: rgba(0, 109, 119, 0.1);
 }
 
 .event-featured .event-card-badge {
@@ -1018,6 +1008,10 @@ h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
   font-size: 0.8rem;
   color: white !important;
   letter-spacing: 0.05em;
+}
+
+.footer p * {
+  color: white !important;
 }
 
 .footer p span {
@@ -1292,12 +1286,12 @@ h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 
   .events-grid .event-card.event-featured {
     aspect-ratio: 3/4;
-    border-radius: 200px 200px 20px 20px;
+    border-radius: 50% 50% 20px 20px / 18% 18% 20px 20px;
     max-height: none;
   }
 
   .event-featured .event-card-overlay {
-    background: linear-gradient(to top, rgba(0, 109, 119, 0.7) 0%, rgba(0, 109, 119, 0.15) 40%, transparent 70%);
+    background: transparent;
     justify-content: flex-end;
     padding: 2rem 1.5rem;
     align-items: center;
@@ -1451,6 +1445,8 @@ h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
   line-height: 1.8;
   font-family: var(--font-body);
   font-style: normal;
+  hyphens: none;
+  text-wrap: pretty;
 }
 
 .project-intro p em {
@@ -1492,7 +1488,7 @@ h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 }
 
 .project-detail-hero-img {
-  border-radius: 200px 200px 20px 20px;
+  border-radius: 50% 50% 20px 20px / 18% 18% 20px 20px;
   overflow: hidden;
   aspect-ratio: 3/4;
   background: var(--cream);
