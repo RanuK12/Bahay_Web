@@ -6,12 +6,19 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
+  <!-- Seguridad: todas las peticiones http se actualizan a https -->
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <!-- Evitar que iOS Safari convierta automáticamente números (p.ej. la P.IVA) en enlaces tel: -->
+  <meta name="format-detection" content="telephone=no">
+  <meta name="theme-color" content="#9FC8CA">
+  <!-- Fallback client-side: si se accede por http, redirigir a https (solo dominio de producción) -->
+  <script>(function(){try{if(location.protocol==="http:" && !/^(localhost|127\.|192\.168\.|10\.)/.test(location.hostname)){location.replace("https:"+location.href.substring(location.protocol.length));}}catch(e){}})();</script>
   <title>Casa MK — Progettazione d'Interni · Bahay Design</title>
   <meta name="description" content="Casa MK — Progettazione d'Interni, render e lavori in corso. Bahay Design, Vicenza.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Marmelad&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=20260328g">
+  <link rel="stylesheet" href="assets/css/style.css?v=20260510a">
   <link rel="icon" href="assets/images/branding/logo.svg" type="image/svg+xml">
 </head>
 <body>
@@ -116,6 +123,6 @@
       <p>&copy; 2026 Bahay Design — Cristina Cocco, Architetto. P.IVA 04315700247 — Vicenza, Italia</p>
     </div>
   </footer>
-  <script src="assets/js/main.js?v=20260328g"></script>
+  <script src="assets/js/main.js?v=20260510a"></script>
 </body>
 </html>

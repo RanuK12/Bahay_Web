@@ -2,10 +2,12 @@
 :root {
   --teal-dark: #006D77;
   --teal-light: #9FC8CA;
+  --verdino: #9FC8CA; /* verde claro (alias semántico de teal-light) */
   --terracotta: #E3A088;
   --cream: #D9CDBD;
   --taupe: #AEA192;
   --brown: #7A6455;
+  --soft-brown: #f1e7e2; /* fondo suave arcos / formularios */
   --white: #fef7f2;
   --text-dark: #3A3A3A;
   --text-light: #6B6B6B;
@@ -301,7 +303,8 @@ h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 .about-image {
   position: relative;
   overflow: hidden;
-  border-radius: 50% 50% 20px 20px / 18% 18% 20px 20px;
+  /* Arco superior proporcionado: radio vertical elevado a 42% para una curva limpia */
+  border-radius: 50% 50% 20px 20px / 42% 42% 20px 20px;
   aspect-ratio: 3/4;
   background: var(--cream);
 }
@@ -353,9 +356,10 @@ h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 }
 
 .service-card {
-  background: #f1e7e2;
+  background: var(--soft-brown);
   border: none;
-  border-radius: 50% 50% 20px 20px / 18% 18% 20px 20px;
+  /* Arco superior con curva suave */
+  border-radius: 50% 50% 20px 20px / 42% 42% 20px 20px;
   padding: 3rem 2rem 2.5rem;
   text-align: center;
   transition: all 0.4s ease;
@@ -475,43 +479,39 @@ h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 }
 
 .service-qa-item h3 {
-  color: var(--teal-light);
+  /* Título en verdino (verde claro) — sin decoraciones tipo bullet */
+  color: var(--verdino);
   margin-bottom: 1rem;
-  font-size: 1.3rem;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 .service-qa-item p,
 .service-qa-item ul {
   color: var(--brown);
   font-size: 0.95rem;
-  padding-left: 1.5rem;
-}
-
-.service-qa-item ul {
+  /* Texto flush a la izquierda para evitar que parezca una lista con bullets */
+  padding-left: 0;
   list-style: none;
+  text-align: justify;
+  hyphens: none;
 }
 
 .service-qa-item ul li {
   padding: 0.3rem 0;
-  position: relative;
-  padding-left: 1rem;
+  padding-left: 0;
 }
 
 .service-qa-item ul li::before {
-  content: '—';
-  position: absolute;
-  left: 0;
-  color: var(--teal-light);
+  content: none;
 }
 
 /* Service CTA / Contact form section */
 .service-cta {
   margin-top: 4rem;
   padding: 3rem;
-  background: #f1e7e2;
+  background: var(--soft-brown);
   border-radius: 20px;
   text-align: center;
 }
@@ -599,7 +599,8 @@ h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 
 .project-card {
   position: relative;
-  border-radius: 50% 50% 0 0 / 18% 18% 0 0;
+  /* Arco superior con curva suave (antes 18% quedaba plano) */
+  border-radius: 50% 50% 0 0 / 42% 42% 0 0;
   overflow: hidden;
   aspect-ratio: 3/4;
   cursor: pointer;
@@ -624,10 +625,11 @@ h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 
 .project-caption {
   text-align: center;
-  margin-top: 1rem;
-  font-size: 1.15rem;
-  letter-spacing: 0.1em;
-  color: var(--teal-light);
+  margin-top: 1.2rem;
+  /* Títulos de proyecto más grandes y en verdino */
+  font-size: 1.45rem;
+  letter-spacing: 0.12em;
+  color: var(--verdino);
   text-transform: uppercase;
   font-weight: 600;
 }
@@ -675,10 +677,13 @@ h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 .project-description {
   max-width: 700px;
   margin: 3rem auto 0;
-  text-align: center;
+  text-align: justify;
   color: var(--brown);
   font-size: 0.95rem;
   line-height: 1.8;
+  hyphens: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
 }
 
 /* ===== PAYO (TEAM) ===== */
@@ -694,7 +699,8 @@ h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 
 .team-card {
   position: relative;
-  border-radius: 50% 50% 0 0 / 18% 18% 0 0;
+  /* Arco superior con curva suave */
+  border-radius: 50% 50% 0 0 / 42% 42% 0 0;
   overflow: hidden;
   aspect-ratio: 3/4;
   background: var(--cream);
@@ -746,9 +752,10 @@ h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 }
 
 .contact-card {
-  background: #f1e7e2;
+  background: var(--soft-brown);
   border: 1px solid rgba(174, 161, 146, 0.15);
-  border-radius: 50% 50% 20px 20px / 18% 18% 20px 20px;
+  /* Arco superior con curva suave */
+  border-radius: 50% 50% 20px 20px / 42% 42% 20px 20px;
   padding: 2.5rem 1.5rem 2rem;
   text-align: center;
   transition: all 0.4s ease;
@@ -788,6 +795,27 @@ h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
   font-size: 1rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+}
+
+/* Sub-heading dentro de una contact-card (mismo sistema de tipografía que el h3 principal,
+   usado por ejemplo para "Link Utili") */
+.contact-card .contact-subheading {
+  color: var(--teal-light);
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 0.6rem;
+  line-height: 1.3;
+}
+
+/* Bloque separador para sub-sección (p. ej. "Link Utili" dentro de "Scrivici") */
+.contact-card .contact-subblock {
+  margin-top: 1.2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(174, 161, 146, 0.15);
+  width: 100%;
 }
 
 .contact-card p {
@@ -881,7 +909,8 @@ h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 
 .event-card {
   position: relative;
-  border-radius: 50% 50% 20px 20px / 18% 18% 20px 20px;
+  /* Arco superior con curva suave */
+  border-radius: 50% 50% 20px 20px / 42% 42% 20px 20px;
   overflow: hidden;
   aspect-ratio: 3/4;
   cursor: pointer;
@@ -921,6 +950,9 @@ h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 }
 
 .event-card-badge {
+  /* Badges terracota eliminados por solicitud QA — se mantiene la regla por si se
+     reactivan en el futuro, pero se ocultan visualmente por defecto. */
+  display: none;
   position: absolute;
   top: 1.8rem;
   left: 50%;
@@ -1016,6 +1048,17 @@ h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 
 .footer p span {
   color: white !important;
+}
+
+/* iOS detecta automáticamente el número de VAT como enlace telefónico,
+   aplicando el color terracota heredado de '.footer a'. Forzamos blanco. */
+.footer p a,
+.footer p a:link,
+.footer p a:visited,
+.footer p a:hover,
+.footer p a:active {
+  color: white !important;
+  text-decoration: none !important;
 }
 
 .footer a {
@@ -1286,7 +1329,7 @@ h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 
   .events-grid .event-card.event-featured {
     aspect-ratio: 3/4;
-    border-radius: 50% 50% 20px 20px / 18% 18% 20px 20px;
+    border-radius: 50% 50% 20px 20px / 42% 42% 20px 20px;
     max-height: none;
   }
 
@@ -1445,7 +1488,11 @@ h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
   line-height: 1.8;
   font-family: var(--font-body);
   font-style: normal;
+  /* Una sola columna, justificado, sin separación de sílabas */
+  text-align: justify;
   hyphens: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
   text-wrap: pretty;
 }
 
@@ -1488,7 +1535,8 @@ h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 }
 
 .project-detail-hero-img {
-  border-radius: 50% 50% 20px 20px / 18% 18% 20px 20px;
+  /* Arco superior con curva suave */
+  border-radius: 50% 50% 20px 20px / 42% 42% 20px 20px;
   overflow: hidden;
   aspect-ratio: 3/4;
   background: var(--cream);
