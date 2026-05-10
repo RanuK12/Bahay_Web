@@ -6,12 +6,19 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
+  <!-- Seguridad: todas las peticiones http se actualizan a https -->
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <!-- Evitar que iOS Safari convierta automáticamente números (p.ej. la P.IVA) en enlaces tel: -->
+  <meta name="format-detection" content="telephone=no">
+  <meta name="theme-color" content="#9FC8CA">
+  <!-- Fallback client-side: si se accede por http, redirigir a https (solo dominio de producción) -->
+  <script>(function(){try{if(location.protocol==="http:" && !/^(localhost|127\.|192\.168\.|10\.)/.test(location.hostname)){location.replace("https:"+location.href.substring(location.protocol.length));}}catch(e){}})();</script>
   <title>Contatti — Bahay Design</title>
   <meta name="description" content="Contatta Bahay Design per una consulenza di architettura e interior design.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Marmelad&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=20260328g">
+  <link rel="stylesheet" href="assets/css/style.css?v=20260510a">
   <link rel="icon" href="assets/images/branding/logo.svg" type="image/svg+xml">
 </head>
 <body>
@@ -48,8 +55,8 @@
             <h3>Scrivici</h3>
             <p><a href="/cdn-cgi/l/email-protection#93fafdf5fcd3f1f2fbf2eaf7f6e0faf4fdbdfae7"><span class="__cf_email__" data-cfemail="cda4a3aba28dafaca5acb4a9a8bea4aaa3e3a4b9">[email&#160;protected]</span></a></p>
             <p style="margin-top: 0.3rem;">Vicenza, Italia</p>
-            <div style="margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid rgba(174,161,146,0.15); width: 100%;">
-              <p style="font-size: 1rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--teal-light); font-weight: 700; margin-bottom: 0.6rem; font-family: var(--font-heading);">Link Utili</p>
+            <div class="contact-subblock">
+              <h3 class="contact-subheading">Link Utili</h3>
               <p><a href="https://linktr.ee/bahay.design" target="_blank" rel="noopener">linktr.ee/bahay.design</a></p>
               <p><a href="https://www.rahcolours.com/it/ambassadors/cristina-cocco" target="_blank" rel="noopener">RAH Colours — Cristina Cocco</a></p>
               <p><a href="https://www.houzz.it/hznb/professionisti/bahay-design-pfvwit-pf~1171070141" target="_blank" rel="noopener">Bahay Design su Houzz</a></p>
@@ -120,6 +127,6 @@
       <p>&copy; 2026 Bahay Design — Cristina Cocco, Architetto. P.IVA 04315700247 — Vicenza, Italia</p>
     </div>
   </footer>
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/main.js?v=20260328g"></script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/main.js?v=20260510a"></script>
 </body>
 </html>
