@@ -334,6 +334,12 @@ h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
   color: var(--brown);
   margin-bottom: 1rem;
   font-size: 0.95rem;
+  /* Justificado a ambos márgenes sin división silábica */
+  text-align: justify;
+  hyphens: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  text-wrap: pretty;
 }
 
 .kw {
@@ -993,39 +999,59 @@ h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
   letter-spacing: 0.04em;
 }
 
-/* Featured event — first card spans full width */
+/* Featured event — primera card destacada con la misma forma de arco que las demás
+   pero spanneando las dos columnas. Así queda alineada con los otros arcos. */
 .events-grid .event-card.event-featured {
   grid-column: 1 / -1;
-  aspect-ratio: 21/9;
-  border-radius: 20px;
-  max-height: 380px;
+  aspect-ratio: 16/9;
+  /* Mismo arco superior que el resto de cards de eventi */
+  border-radius: 50% 50% 20px 20px / 24% 24% 20px 20px;
+  max-height: 420px;
+  max-width: 760px;
+  margin: 0 auto 0.5rem;
+  width: 100%;
 }
 
 .event-featured .event-card-overlay {
   background: transparent;
-  justify-content: center;
-  padding: 2.5rem 3rem;
-  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 2rem;
+  align-items: center;
 }
 
 .event-featured:hover .event-card-overlay {
   background: rgba(0, 109, 119, 0.1);
 }
 
-.event-featured .event-card-badge {
-  top: 1.5rem;
-  left: 2rem;
-  transform: none;
+/* Caption debajo de cada card de evento (reemplaza los badges terracota previos).
+   Tipografía coherente con .project-caption. */
+.event-item {
+  display: flex;
+  flex-direction: column;
 }
 
-.event-featured .event-card-content {
-  text-align: left;
-  max-width: 380px;
+.event-caption {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  color: var(--verdino);
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 1.4;
+  font-family: var(--font-body);
 }
 
-.event-featured .event-card-content h3 {
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
+.event-item.event-featured-wrap {
+  grid-column: 1 / -1;
+  max-width: 760px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.event-item.event-featured-wrap .event-caption {
+  font-size: 1.05rem;
+  margin-top: 1.1rem;
 }
 
 /* ===== FOOTER ===== */
@@ -1479,7 +1505,8 @@ h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 /* Intro strip */
 .project-intro {
   padding: 3rem 0 2rem;
-  max-width: 680px;
+  max-width: 760px;
+  margin: 0 auto;
 }
 
 .project-intro p {
@@ -1501,19 +1528,32 @@ h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
   font-family: var(--font-accent);
   font-style: italic;
   font-weight: 500;
+  /* Sin subrayado, incluso si algún navegador lo aplica por defecto */
+  text-decoration: none;
 }
 
-/* Project detail header (new layout) */
+.project-intro a,
+.project-intro em,
+.project-intro strong {
+  text-decoration: none;
+}
+
+/* Project detail header (new layout — Opzione A)
+   Para textos largos: título y tipo centrados arriba, arco centrado debajo,
+   y párrafo introductorio a ancho completo y justificado en la sección siguiente. */
 .project-detail-hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  margin-bottom: 3rem;
+  gap: 1.75rem;
+  max-width: 520px;
+  margin: 0 auto 3rem;
+  text-align: center;
 }
 
 .project-detail-hero-text {
   text-align: center;
+  order: 1;
 }
 
 .project-detail-hero-text h1 {
@@ -1529,12 +1569,14 @@ h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
   font-size: 0.8rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--teal-light);
+  color: var(--verdino);
   font-family: var(--font-body);
   font-weight: 600;
 }
 
 .project-detail-hero-img {
+  order: 2;
+  width: 100%;
   /* Arco superior con curva suave */
   border-radius: 50% 50% 20px 20px / 42% 42% 20px 20px;
   overflow: hidden;
@@ -1685,4 +1727,315 @@ h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
   width: 100%;
   height: auto;
   object-fit: cover;
+}
+
+
+/* ===========================================================================
+   NEWS PAGE
+   =========================================================================== */
+
+.news-intro {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 3rem;
+  color: var(--taupe);
+  font-size: 1rem;
+  font-family: var(--font-accent);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem 2.5rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* News item: envoltorio que contiene arco + texto */
+.news-item {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.news-item.news-featured {
+  grid-column: 1 / -1;
+  max-width: 760px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Tarjeta con arco — misma estética de cards de eventi/progetti */
+.news-card {
+  position: relative;
+  border-radius: 50% 50% 20px 20px / 42% 42% 20px 20px;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  background: var(--cream);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.news-item.news-featured .news-card {
+  aspect-ratio: 16/9;
+  border-radius: 50% 50% 20px 20px / 24% 24% 20px 20px;
+  max-height: 420px;
+}
+
+.news-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(122, 100, 85, 0.18);
+}
+
+.news-card img,
+.news-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+  cursor: pointer;
+}
+
+.news-card:hover img {
+  transform: scale(1.04);
+}
+
+/* Texto debajo de la card */
+.news-content {
+  text-align: center;
+  margin-top: 1.2rem;
+  padding: 0 0.5rem;
+}
+
+.news-year {
+  display: inline-block;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-body);
+}
+
+.news-title {
+  color: var(--verdino);
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.35;
+  margin-bottom: 0.6rem;
+}
+
+.news-title a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.news-title a:hover {
+  color: var(--terracotta);
+}
+
+.news-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 1.1rem;
+  margin-top: 0.3rem;
+  border: 1.5px solid var(--terracotta);
+  border-radius: 50px;
+  color: var(--terracotta);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-family: var(--font-body);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.news-link::after {
+  content: '→';
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.news-link:hover {
+  background: var(--terracotta);
+  color: white;
+}
+
+/* Mini galería dentro de una news (elemento 4) */
+.news-card.news-card-gallery {
+  aspect-ratio: 3/4;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 3px;
+  overflow: hidden;
+  border-radius: 50% 50% 20px 20px / 42% 42% 20px 20px;
+}
+
+.news-card.news-card-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: auto;
+}
+
+.news-card.news-card-gallery img:first-child {
+  grid-column: 1 / -1;
+  grid-row: 1;
+}
+
+.news-card.news-card-gallery img:not(:first-child) {
+  grid-row: 2;
+}
+
+.news-card.news-card-gallery img:nth-child(n+4) {
+  display: none; /* mantenemos sólo las 3 primeras visibles en la miniatura */
+}
+
+/* Video card con botón play superpuesto */
+.news-card-video {
+  position: relative;
+  cursor: pointer;
+}
+
+.news-card-video .news-play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(58, 58, 58, 0.25);
+  transition: background 0.3s ease;
+  pointer-events: none;
+}
+
+.news-card-video:hover .news-play {
+  background: rgba(58, 58, 58, 0.4);
+}
+
+.news-play-btn {
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.news-card-video:hover .news-play-btn {
+  transform: scale(1.08);
+  background: var(--terracotta);
+}
+
+.news-play-btn svg {
+  width: 30px;
+  height: 30px;
+  fill: var(--terracotta);
+  margin-left: 4px;
+  transition: fill 0.3s ease;
+}
+
+.news-card-video:hover .news-play-btn svg {
+  fill: white;
+}
+
+.news-card-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Modal para reproducir el video */
+.video-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.video-modal.active {
+  display: flex;
+}
+
+.video-modal-content {
+  width: min(92vw, 1100px);
+  max-height: 86vh;
+  position: relative;
+}
+
+.video-modal-content video {
+  width: 100%;
+  height: auto;
+  max-height: 86vh;
+  display: block;
+  background: #000;
+  border-radius: 6px;
+}
+
+.video-modal-close {
+  position: absolute;
+  top: -2.5rem;
+  right: 0;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2.2rem;
+  cursor: pointer;
+  font-family: var(--font-body);
+  line-height: 1;
+  padding: 0.2rem 0.6rem;
+  transition: opacity 0.3s ease;
+  opacity: 0.8;
+}
+
+.video-modal-close:hover {
+  opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .news-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    gap: 2.5rem;
+  }
+
+  .news-item.news-featured {
+    max-width: 420px;
+  }
+
+  .news-item.news-featured .news-card {
+    aspect-ratio: 3/4;
+    border-radius: 50% 50% 20px 20px / 42% 42% 20px 20px;
+    max-height: none;
+  }
+
+  .news-title {
+    font-size: 1rem;
+  }
+
+  .news-play-btn {
+    width: 60px;
+    height: 60px;
+  }
+
+  .news-play-btn svg {
+    width: 24px;
+    height: 24px;
+  }
 }
