@@ -52,33 +52,49 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightbox = document.querySelector('.lightbox');
   if (lightbox) {
     const lightboxImg = lightbox.querySelector('#lightbox-img');
-    const lightboxImages = Array.from(document.querySelectorAll('[data-lightbox]'));
+    const allLightboxImages = Array.from(document.querySelectorAll('[data-lightbox]'));
+    let currentGroup = allLightboxImages; // colección actualmente en navegación
     let currentIndex = 0;
 
     const prevBtn = lightbox.querySelector('.lightbox-prev');
     const nextBtn = lightbox.querySelector('.lightbox-next');
 
-    function showImage(index) {
-      if (index < 0) index = lightboxImages.length - 1;
-      if (index >= lightboxImages.length) index = 0;
-      currentIndex = index;
-      lightboxImg.src = lightboxImages[currentIndex].src;
+    function getGroupFor(img) {
+      const groupName = img.getAttribute('data-lightbox-group');
+      if (!groupName) return allLightboxImages;
+      return allLightboxImages.filter(el => el.getAttribute('data-lightbox-group') === groupName);
     }
 
-    lightboxImages.forEach((img, i) => {
-      img.addEventListener('click', () => {
-        currentIndex = i;
-        lightboxImg.src = img.src;
-        lightbox.classList.add('active');
+    function showImage(index) {
+      if (!currentGroup.length) return;
+      if (index < 0) index = currentGroup.length - 1;
+      if (index >= currentGroup.length) index = 0;
+      currentIndex = index;
+      lightboxImg.src = currentGroup[currentIndex].src;
+      lightboxImg.alt = currentGroup[currentIndex].alt || '';
+    }
+
+    function openLightboxFor(img) {
+      currentGroup = getGroupFor(img);
+      currentIndex = currentGroup.indexOf(img);
+      if (currentIndex < 0) currentIndex = 0;
+      lightboxImg.src = currentGroup[currentIndex].src;
+      lightboxImg.alt = currentGroup[currentIndex].alt || '';
+      lightbox.classList.add('active');
+    }
+
+    allLightboxImages.forEach((img) => {
+      img.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        openLightboxFor(img);
       });
       // If image is inside an event card, make the whole card clickable for lightbox
       const eventCard = img.closest('.event-card');
       if (eventCard) {
         eventCard.addEventListener('click', (e) => {
           if (e.target.closest('.lightbox')) return;
-          currentIndex = i;
-          lightboxImg.src = img.src;
-          lightbox.classList.add('active');
+          openLightboxFor(img);
         });
       }
     });
