@@ -8,7 +8,7 @@
   <meta http-equiv="Expires" content="0">
   <!-- Seguridad: todas las peticiones http se actualizan a https -->
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-  <!-- Evitar que iOS Safari convierta automáticamente números (p.ej. la P.IVA) en enlaces tel: -->
+  <!-- Evitar que iOS Safari convierta automáticamente números (p.ej. la P.IVA) in enlaces tel: -->
   <meta name="format-detection" content="telephone=no">
   <meta name="theme-color" content="#9FC8CA">
   <!-- Fallback client-side: si se accede por http, redirigir a https (solo dominio de producción) -->
@@ -41,65 +41,48 @@
     </nav>
   </header>
 
-  <main class="page-content projects" style="padding-top: 6rem;">
+  <main class="page-content" style="padding-top: 6rem; background: #FDFBF7;">
     <div class="container">
-      <h2 class="section-title">Eventi</h2>
-      <p style="text-align: center; color: var(--taupe); font-size: 1rem; margin-bottom: 3rem; font-family: var(--font-accent); font-style: italic;">Qui troverai gli ultimi eventi, collaborazioni e novità di Bahay Design.</p>
+      <h2 class="section-title" style="color: var(--terracotta);">EVENTI</h2>
+      <p style="text-align: center; color: var(--taupe); font-size: 1rem; margin-bottom: 3rem; font-family: var(--font-body);">Qui troverai gli ultimi eventi, collaborazioni e novità di Bahay Design.</p>
 
-      <div class="events-grid">
-        <!-- Open Day -->
-        <div class="event-item fade-in">
-          <div class="event-card">
-            <img src="assets/images/events/open-day-rah.jpg" alt="Open Day — Consulenze RAH con Vicenza Vernici" data-lightbox>
-          </div>
-          <p class="event-caption">Open Day — Consulenze RAH con Vicenza Vernici</p>
+      <div class="events-grid-arch">
+
+        <!-- Fila 1 -->
+        <div class="event-arch-item fade-in">
+          <div class="event-arch-shape"></div>
+          <p class="event-arch-caption">WORKSHOP ARMONIA DEL COLORE &amp; RESTYLING</p>
         </div>
 
-        <div class="event-item fade-in">
-          <div class="event-card">
-            <img src="assets/images/events/festa-fiori-arreda.png" alt="Consulenze alla Festa dei Fiori con Arreda&Risparmia" data-lightbox>
-          </div>
-          <p class="event-caption">Festa dei Fiori — Arreda&amp;Risparmia</p>
+        <div class="event-arch-item fade-in">
+          <div class="event-arch-shape"></div>
+          <p class="event-arch-caption">PRESENTAZIONE — IL COLORE E LA PERSONA</p>
         </div>
 
-        <div class="event-item fade-in">
-          <div class="event-card">
-            <img src="assets/images/events/rah-vicenza-vernici.png" alt="Consulenze colore RAH gratuite con Vicenza Vernici" data-lightbox>
-          </div>
-          <p class="event-caption">Consulenze Colore RAH — Vicenza Vernici</p>
+        <div class="event-arch-item fade-in">
+          <div class="event-arch-shape"></div>
+          <p class="event-arch-caption">OPEN DAY — CONSULENZE RAH CON VICENZA VERNICI</p>
         </div>
 
-        <div class="event-item fade-in">
-          <div class="event-card">
-            <img src="assets/images/events/presentazione-colore-persona.jpg" alt="Presentazione 'Il colore e la persona' - Presentazione del TEST RAH con Vicenza Vernici" data-lightbox>
-          </div>
-          <p class="event-caption">Presentazione — Il colore e la persona</p>
+        <!-- Fila 2 -->
+        <div class="event-arch-item fade-in">
+          <div class="event-arch-shape"></div>
+          <p class="event-arch-caption">FESTA DEI FIORI — ARREDA&amp;RISPARMIA</p>
         </div>
 
-        <div class="event-item fade-in">
-          <div class="event-card">
-            <img src="assets/images/events/workshop-armonia-colore-restyling.jpg" alt="Workshop Armonia del Colore e Restyling - in collaborazione con Lucia Piazza e Vicenza Vernici" data-lightbox>
-          </div>
-          <p class="event-caption">Workshop Armonia del Colore &amp; Restyling</p>
+        <div class="event-arch-item fade-in">
+          <div class="event-arch-shape"></div>
+          <p class="event-arch-caption">CONSULENZE COLORE RAH — VICENZA VERNICI</p>
         </div>
 
-        <div class="event-item fade-in">
-          <div class="event-card">
-            <img src="assets/images/events/webinar-colore-architetti.png" alt="Webinar sul colore con l'Ordine degli Architetti" data-lightbox>
-          </div>
-          <p class="event-caption">Webinar — Il colore per gli Architetti</p>
+        <div class="event-arch-item fade-in">
+          <div class="event-arch-shape"></div>
+          <p class="event-arch-caption">WEBINAR — IL COLORE PER GLI ARCHITETTI</p>
         </div>
+
       </div>
     </div>
   </main>
-
-  <!-- Lightbox -->
-  <div class="lightbox" id="lightbox">
-    <button class="lightbox-close" id="lightbox-close">&times;</button>
-    <button class="lightbox-prev">&#8249;</button>
-    <button class="lightbox-next">&#8250;</button>
-    <img src="" alt="" id="lightbox-img">
-  </div>
 
   <footer class="footer">
     <div class="container">

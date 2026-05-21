@@ -1527,11 +1527,10 @@ h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 
 .project-intro p em {
   color: var(--terracotta);
-  /* Mantener la tipografía del cuerpo (Quicksand) en vez de la serif Lora en itálica,
-     y presentar el texto en negrita y recto, coherente con el resto del sitio. */
-  font-family: var(--font-body);
+  /* Usar la misma fuente accent (Lora) que en .kw (Le Origini) */
+  font-family: var(--font-accent);
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   /* Sin subrayado, incluso si algún navegador lo aplica por defecto */
   text-decoration: none;
 }
@@ -2013,6 +2012,56 @@ h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 
 .video-modal-close:hover {
   opacity: 1;
+}
+
+/* ===== EVENTI — Archi stile architettonico ===== */
+.events-grid-arch {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem 2.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-bottom: 4rem;
+}
+
+.event-arch-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.event-arch-shape {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background: var(--teal-dark);
+  border-radius: 50% 50% 0 0 / 33% 33% 0 0;
+}
+
+.event-arch-caption {
+  text-align: center;
+  margin-top: 1.2rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  color: var(--terracotta);
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 1.5;
+  font-family: var(--font-body);
+}
+
+@media (max-width: 1024px) {
+  .events-grid-arch {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .events-grid-arch {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+    gap: 2.5rem;
+  }
 }
 
 /* Responsive */
