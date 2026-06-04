@@ -1,6 +1,39 @@
 // ===== BAHAY DESIGN - Main JS =====
 
 document.addEventListener('DOMContentLoaded', () => {
+  // === CONTENT PROTECTION ===
+  // Bloqueo de clic derecho (context menu)
+  document.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+    return false;
+  });
+
+  // Bloquear arrastrar imágenes
+  document.addEventListener('dragstart', (e) => {
+    if (e.target.tagName === 'IMG') {
+      e.preventDefault();
+      return false;
+    }
+  });
+
+  // Bloquear atajos de copiar/descargar
+  document.addEventListener('keydown', (e) => {
+    // Ctrl+C, Ctrl+V, Ctrl+X, Ctrl+S, Ctrl+U, Ctrl+P, F12
+    if (
+      (e.ctrlKey && ['c', 'v', 'x', 's', 'u', 'p'].includes(e.key.toLowerCase())) ||
+      e.key === 'F12' ||
+      (e.ctrlKey && e.shiftKey && ['i', 'j', 'c'].includes(e.key.toLowerCase())) ||
+      (e.metaKey && ['c', 'v', 'x', 's', 'u', 'p'].includes(e.key.toLowerCase()))
+    ) {
+      // Permitir copiar en campos de formulario
+      const active = document.activeElement;
+      if (active && (active.tagName === 'INPUT' || active.tagName === 'TEXTAREA' || active.isContentEditable)) {
+        return;
+      }
+      e.preventDefault();
+      return false;
+    }
+  });
   // Header scroll effect
   const header = document.querySelector('.header');
   if (header) {
